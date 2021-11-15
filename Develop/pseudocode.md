@@ -16,6 +16,7 @@ THEN a password is generated that matches the selected criteria
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 
+
 JavaScript Password Generator with prompts and alerts
 
 Create variables for:
@@ -27,6 +28,7 @@ numbers
 Password length has to be 8-128 characters, so we have to assign a loop to handle not going over 128.
 
 We have to create prompts and confirm if the user wants:
+When the user clicks the generate button it prompts them to confirm choices:
 Lowercase, uppdercase, numbers, and/or special characters.
 
 These will be ok(true/yes) or cancel(false/no) options: an alert will pop up after each choice confirming the choice.
