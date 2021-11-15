@@ -1,3 +1,4 @@
+Goal: allow a user to choose different options, resulting in the password of their choice.
 # js-password-generator
 GIVEN I need a new, secure password
 WHEN I click the button to generate a password
@@ -42,5 +43,9 @@ Then the code pulls one character from that bucket if true and nothing if false.
 
 After each bucket is pulled from the number of characters is looked at and the rest of them are pulled from the LARGE bucket of all characters.
 
+The password is generated when it meets the passwordLength and true/false responses from the user. 
+Then the user is taken to the screen with their password.
+
+The user has the option to start over and create another new password after this. 
 
 
