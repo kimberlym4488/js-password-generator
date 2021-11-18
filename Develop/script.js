@@ -16,13 +16,13 @@ var uppercaseLetters = ["A", "B", "D", "F","H","J","K","L"]
 When the user clicks the generate button it prompts them to confirm choices:
 Lowercase, uppdercase, numbers, and/or special characters. First step: what happens when the user clicks the generatePassword button?*/
 
+
+
 var passwordText ="";
 var characterSelectionPool = [];
-  
-  
 
 
-  function generatePassword(){
+function generatePassword() {
   
   //user prompt:password length. If invalid, return user to beginning of this segment.
     var passwordLength = prompt("It's time to generate your password! \nHow long would you like your password to be? \n(Please choose between 8 to 128 characters)")
@@ -90,24 +90,24 @@ var characterSelectionPool = [];
         else{
         console.log("hasNumbers is False");
         alert("You have chosen NOT to include numbers.");
-        }
+  }
   
-console.log(characterSelectionPool);
+        console.log(characterSelectionPool);
 
       if (characterSelectionPool.length > 0){
   
-        for(i=0; i < passwordLength.length; i++) {
+        for(i=0; i < passwordLength; i++) {
   
-          var passwordText = passwordText.concat(characterSelectionPool[
+          passwordText += characterSelectionPool[
   
-            Math.floor((Math.random)*characterSelectionPool.length)
-          ])
+            Math.floor((Math.random())*characterSelectionPool.length)
+          ]
             console.log(passwordText);
             
-            return `Your password is ${passwordText}.`;
+          }
         }
-        }
-      }
+  return passwordText;
+}
 
       //Write password to the #password input
 function writePassword(){
@@ -115,7 +115,7 @@ function writePassword(){
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-  console.log(password);
+  console.log("Your password is " + password);
 }
 
       console.log(passwordText)
