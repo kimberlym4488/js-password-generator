@@ -90,7 +90,6 @@ function generatePassword() {
   }
 
   return passwordText;
-  
 }
 
 function writePassword() {

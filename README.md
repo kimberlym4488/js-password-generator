@@ -1,46 +1,36 @@
-# js-password-generator
-GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN asked for character types to include in the password
-THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
+# JavaScript Password Generator
+> Easy-to-use Password Generator with prompts and alerts for the user to generate a custom, randomized password.
 
-JavaScript Password Generator with prompts and alerts
+## Project Homepage
+https://kimberlym4488.github.io/js-password-generator/
 
-Create variables for:
-specialCharacters
-lowercaseLetters
-uppercaseLetters
-numbers
+## Project documentation URL
+https://github.com/kimberlym4488/js-password-generator.git
 
-Password length has to be 8-128 characters, so we have to assign a loop to handle not going over 128.
+## Project Description
+This project creates a password generator for a user at a company who utilizes various applications with varying password requirements. My goal was to give the user options to make the password as complex or basic as they need it to be depending on the requirements.  
 
-We have to create prompts and confirm if the user wants:
-Lowercase, uppdercase, numbers, and/or special characters.
+# Project Previews
+## Prompt Preview
+(Click Image to see live page)
 
-These will be ok(true/yes) or cancel(false/no) options: an alert will pop up after each choice confirming the choice.
+>[![KM-PWGenPreview-Image1](https://user-images.githubusercontent.com/92805933/142716037-43e6dc54-3cc9-4e12-8f5c-65e62e715ca1.PNG)](https://kimberlym4488.github.io/js-password-generator/)
 
-userChoice Options:
-userChoice hasSpecialCharacters
-userChoice hasLowercaseLetters
-userChoice hasUppercaseLetters
-userChoice hasNumbers 
-userChoice passwordLength
+## Completed Password Preview 
+(Click Image to see live page)
 
-The user choice is entered into the code as true/false 
-Then the code pulls one character from that bucket if true and nothing if false.
+>[![KM-PWGenPreview-Image2](https://user-images.githubusercontent.com/92805933/142716132-415d52c6-1c9a-4e6e-b6c2-c9eb40d35720.PNG)](https://kimberlym4488.github.io/js-password-generator/)   
 
-After each bucket is pulled from the number of characters is looked at and the rest of them are pulled from the LARGE bucket of all characters.
+# Features
+I've added in user input options that show up as alerts/prompts to the user. 
+> * They have to choose a length between 8 and 128 characters. 
+> * There is an option to have special characters, lowercase letters, uppercase letters, and/or numbers.
+    > * If the user chooses none of these options, the process will return them to the start. 
 
-
-
+## Summary
+By using JavaScript we can create a randomized system to pull characters from various arrays. If they don't enter minimum requirements they will be prompted to start over. This will give the user flexibility while maintaining the goals of the password length and options.
+    
+## Author Name
+Kim Moran
+## GitHub user Name
+Kimberlym4488
