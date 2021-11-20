@@ -6,7 +6,8 @@ specialCharacters
 lowercaseLetters
 uppercaseLetters
 numbers*/
-var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
+var numbers = '0123456789'.split('');
 var specialCharacters = ["*", "&", "#", "%", "@"];
 var lowercaseLetters = ["a", "c", "t", "b", "e", "f"];
 var uppercaseLetters = ["A", "B", "D", "F", "H", "J", "K", "L"]
@@ -35,6 +36,8 @@ function generatePassword() {
   var hasSpecialCharacters = confirm("Would you like to include special characters? i.e. *,&,#,>");
   //user prompt: special characters
   if (hasSpecialCharacters) {
+    passwordText += specialCharacters[(Math.floor(Math.random())*specialCharacters.length)];
+    //if "True", this makes sure that at least one random index item from specialCharacters is included in the passwordText. 
     characterSelectionPool = characterSelectionPool.concat(specialCharacters);
   }
 
@@ -42,6 +45,8 @@ function generatePassword() {
   var hasLowercaseLetters = confirm("Would you like to include lowercase letters? i.e. a,d,f,g");
 
   if (hasLowercaseLetters) {
+    passwordText += lowercaseLetters[(Math.floor(Math.random())*lowercaseLetters.length)];     
+    //if "True", this makes sure that at least one random index item from specialCharacters is included in the passwordText. 
     characterSelectionPool = characterSelectionPool.concat(lowercaseLetters);
   }
 
@@ -49,6 +54,8 @@ function generatePassword() {
   var hasUppercaseLetters = confirm("Would you like to include uppercase letters? i.e. F,R,O,G");
 
   if (hasUppercaseLetters) {
+    passwordText += uppercaseLetters[(Math.floor(Math.random())*uppercaseLetters.length)];
+     //if "True", this makes sure that at least one random index item from specialCharacters is included in the passwordText.
     characterSelectionPool = characterSelectionPool.concat(uppercaseLetters)
   }
 
@@ -56,30 +63,26 @@ function generatePassword() {
   var hasNumbers = confirm("Would you like to include numbers? i.e. 5,8,3");
 
   if (hasNumbers) {
-    passwordText += (Math.floor(Math.random())*numbers.length);
+    passwordText += numbers[(Math.floor(Math.random())*numbers.length)];
+     //if "True", this makes sure that at least one random index item from specialCharacters is included in the passwordText.
     characterSelectionPool = characterSelectionPool.concat(numbers);
+    //Adds the numbers array to the characterSelectionPool.
   }
 
 
   //This will only run if the user answers Yes to one of the questions above. Otherwise they are returned to the beginning.
-  
+
   if (characterSelectionPool.length > 0) {
-    //The for-loop below enables this until i (index choice from characterSelectionPool) is less than the password length requested. If a user chooses 10, this will run 10 times. 
-
-
-    // The passwordLength input is how many characters should be chosen from the characterSelectionPool. 
-    passwordLength-=parseInt(passwordText.length);
     
-    console.log(passwordLength);
-    console.log(passwordText.length); 
+    passwordLength-=parseInt(passwordText.length);
+    // We don't want the for loop to run 10 times plus however many required values are added above to passwordText. So we subtract the passwordText length from the password length desired. This means the for loop will only run '6' times since we already have 4 characters in password text. 
     
     for (var i = 0; i < passwordLength; i++) {
-      //passwordText is # of characters in passwordLength (specified by the user in the beginning of the function.) 
+      //The for-loop below enables this until i (index choice from characterSelectionPool) is less than the password length requested.
 
       passwordText += characterSelectionPool[
         Math.floor((Math.random()) * characterSelectionPool.length)
-      ]
-      //Console.log shows each character being added to the string from 1-10!  
+      ] 
     }
   }
   else{
