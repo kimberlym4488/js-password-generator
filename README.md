@@ -1,5 +1,5 @@
 # JavaScript Password Generator
-> Easy-to-use Password Generator with prompts and alerts for the user to generate a custom, randomized password.
+> Easy-to-use Password Generator with prompts and alerts allow a user to generate a custom, randomized password.
 
 ## Project Homepage
 https://kimberlym4488.github.io/js-password-generator/
@@ -22,13 +22,16 @@ This project creates a password generator for a user at a company who utilizes v
 >[![KM-PWGenPreview-Image2](https://user-images.githubusercontent.com/92805933/142716132-415d52c6-1c9a-4e6e-b6c2-c9eb40d35720.PNG)](https://kimberlym4488.github.io/js-password-generator/)   
 
 # Features
-I've added in user input options that show up as alerts/prompts to the user. 
-> * They have to choose a length between 8 and 128 characters. 
-> * There is an option to have special characters, lowercase letters, uppercase letters, and/or numbers.
-    > * If the user chooses none of these options, the process will return them to the start. 
+This generator contains user prompts that will require input from the user in order to proceed:
+
+&#10004; Choose a length between 8 and 128 characters.
+
+&#10004; Choose if the password will contain special characters, lowercase letters, uppercase letters, and/or numbers.
+
+    If the user chooses a length outside the options specified or doesn't choose any categories (special characters, lowercase letters, uppercase letters, or numbers), the system will return them to the start. 
 
 ## Summary
-By using JavaScript we can create a randomized system to pull characters from various arrays. If they don't enter minimum requirements they will be prompted to start over. This will give the user flexibility while maintaining the goals of the password length and options.
+By using JavaScript code we can create a prompt system to acquire choices from the user. Then we apply these choices to specific arrays and require at least one of each chosen array value be included in the final password. The rest of the password is decided at random from the remaining character selection pool (made up of the user choices). This will give the user flexibility and randomization while maintaining the goals of the password length and available options.
     
 ## Author Name
 Kim Moran
