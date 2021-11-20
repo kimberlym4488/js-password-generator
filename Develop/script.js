@@ -8,9 +8,9 @@ uppercaseLetters
 numbers*/
 
 var numbers = '0123456789'.split('');
-var specialCharacters = ["*", "&", "#", "%", "@"];
-var lowercaseLetters = ["a", "c", "t", "b", "e", "f"];
-var uppercaseLetters = ["A", "B", "D", "F", "H", "J", "K", "L"]
+var specialCharacters = '*$%&*#@'.split('');
+var lowercaseLetters = 'abcdefghijklmnopqrstuvwxyz'.split('');
+var uppercaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
 
 /*We have to create prompts and confirm if the user wants:
