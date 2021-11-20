@@ -20,20 +20,16 @@ var passwordText = "";
 var characterSelectionPool = [];
 
 function generatePassword() {
-  passwordText.value = "#password";
+  passwordText="";
 
   //user prompt:password length. If invalid,the return at the end of password length if statement will bring the user to beginning of this segment again.
   var passwordLength =prompt("It's time to generate your password! \n(Please choose between 8 to 128 characters)");
-
-  if (passwordLength <= 8 ||
-    passwordLength >= 128 ) {
+  passwordLength=parseInt(passwordLength);
+  if (passwordLength < 8 ||
+    passwordLength >= 128 || isNaN(passwordLength) === true) {
       //Alert user if not a number. 
-      alert("Please try again and choose an appropriate password length.")
+      alert("Please try again and choose an appropriate password length between 8-128 numbers.")
       return "";
-  }
-
-  else{
-    alert("Password Length is ok");
   }
 
   var hasSpecialCharacters = confirm("Would you like to include special characters? i.e. *,&,#,>");
@@ -60,6 +56,7 @@ function generatePassword() {
   var hasNumbers = confirm("Would you like to include numbers? i.e. 5,8,3");
 
   if (hasNumbers) {
+    passwordText += (Math.floor(Math.random())*numbers.length);
     characterSelectionPool = characterSelectionPool.concat(numbers);
   }
 
@@ -69,10 +66,16 @@ function generatePassword() {
   if (characterSelectionPool.length > 0) {
     //The for-loop below enables this until i (index choice from characterSelectionPool) is less than the password length requested. If a user chooses 10, this will run 10 times. 
 
-    // The passwordLength input is how many characters should be chosen from the characterSelectionPool. 
-    for (var i = 0; i < passwordLength; i++) {
 
+    // The passwordLength input is how many characters should be chosen from the characterSelectionPool. 
+    passwordLength-=parseInt(passwordText.length);
+    
+    console.log(passwordLength);
+    console.log(passwordText.length); 
+    
+    for (var i = 0; i < passwordLength; i++) {
       //passwordText is # of characters in passwordLength (specified by the user in the beginning of the function.) 
+
       passwordText += characterSelectionPool[
         Math.floor((Math.random()) * characterSelectionPool.length)
       ]
@@ -86,17 +89,15 @@ function generatePassword() {
   return passwordText;
   
 }
-console.log(password)
-console.log(passwordText);
 
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
- 
+  var pwText = document.querySelector("#password");
+  
+  pwText.value = password;
+  
+  console.log(password)
   console.log(pwText);
-  console.log(passwordText);
 }
 //Write password to the #password input
 // Add event listener to generate button
